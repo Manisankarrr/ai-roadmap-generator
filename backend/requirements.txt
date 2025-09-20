@@ -1,0 +1,6 @@
+Flask
+python-dotenv
+requests
+Flask-CORS
+google-generativeai
+chromadb
