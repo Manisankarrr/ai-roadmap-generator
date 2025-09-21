@@ -40,13 +40,10 @@ jobs:
   deploy-frontend:
     name: Deploy Frontend to Vercel
     runs-on: ubuntu-latest
-    # This job will only run if the 'build-backend' job completes successfully
     needs: build-backend
-    # **NEW**: Set environment variables specifically for this job
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -55,11 +52,9 @@ jobs:
         run: npm install --global vercel@latest
 
       - name: Pull Vercel Project Settings
-        # This command now implicitly uses the environment variables set above
-        run: vercel pull --yes --environment=production
-
-      - name: Build & Deploy Project to Vercel
-        # These commands also use the environment variables automatically
-        run: vercel build --prod && vercel deploy --prod --prebuilt
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
         working-directory: ./frontend
 
+      - name: Build & Deploy Project to Vercel
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} && vercel deploy --prod --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+        working-directory: ./frontend
