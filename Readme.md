@@ -27,7 +27,7 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/ai-roadmap-generator.git
+   git clone https://github.com/manisankarrr/ai-roadmap-generator.git
    cd ai-roadmap-generator
    ```
 
@@ -75,6 +75,24 @@
 3. **Receive a personalized AI roadmap in the response!**
 
 ---
+## Docker
+
+1.  **Navigate to the `backend` directory:**
+    ```bash
+    cd backend
+    ```
+
+2.  **Build the Docker image:**
+    ```bash
+    docker build -t ai-roadmap-generator .
+    ```
+    (This command tells Docker to build an image, name (`-t`) it `ai-roadmap-generator`, and use the `Dockerfile` in the current directory (`.`))
+
+3.  **Run the Docker container:**
+    ```bash
+    docker run -p 5000:5000 -v .:/app ai-roadmap-generator
+    
+
 
 ## 🤝 Contributing
 
