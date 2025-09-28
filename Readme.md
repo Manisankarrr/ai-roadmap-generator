@@ -1,6 +1,10 @@
-# 🗺️ ai-roadmap-generator
+# 🗺️ AI-Roadmap-Generator
 
-**ai-roadmap-generator** is an intelligent tool that generates personalized AI learning roadmaps by analyzing GitHub profiles and leveraging state-of-the-art AI models. This project is designed to help developers, students, and professionals identify skill gaps, explore market trends, and plan their learning journey efficiently.
+**AI-Roadmap-Generator** is an intelligent tool that generates personalized AI learning roadmaps by analyzing GitHub profiles and leveraging state-of-the-art AI models. This project is designed to help developers, students, and professionals identify skill gaps, explore market trends, and plan their learning journey efficiently.
+
+---
+## Live Preview
+https://ai-project-roadmap-generator.vercel.app/
 
 ---
 
