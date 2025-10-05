@@ -7,24 +7,17 @@
 https://ai-project-roadmap-generator.vercel.app/
 
 ---
-
 ## ✨ Features
 
-- **🔍 GitHub Profile Analysis:**  
-  Analyze any GitHub profile to extract skills, project experience, and coding activity.
+* **🔍 Dynamic GitHub Analysis:** Automatically scans a user's GitHub profile to identify their **core languages, frameworks, and project experience**, forming a clear baseline of their current skillset.
 
-- **🧠 Personalized AI Learning Paths:**  
-  Generate tailored AI learning roadmaps based on user profiles and current AI industry trends.
+* **🧠 Hyper-Personalized Project Generation:** Moves beyond generic advice. The AI Mentor analyzes the user's specific **career goal** and **preferred tech stack** to generate a unique, relevant **project idea** complete with a step-by-step learning roadmap.
 
-- **🌐 Market Context Awareness:**  
-  Integrate up-to-date market context to ensure roadmaps are relevant and future-proof.
+* **🌐 RAG-Powered Market Insights:** Utilizes a **Retrieval-Augmented Generation (RAG)** pipeline to inject up-to-date **industry trends and market context** into the prompt, ensuring the suggested project is valuable and aligned with current demands.
 
-- **🤖 Multiple Model Support:**  
-  Easily switch between different LLM providers (OpenAI, Google Generative AI).
+* **🤖 Flexible Model Integration:** Leverages **OpenRouter** to connect with a wide variety of powerful language models. The architecture is designed to easily swap models (e.g., from Deepseek, OpenAI, Google, Anthropic) to fit different performance or cost needs.
 
-- **🚀 Simple API:**  
-  RESTful endpoints for seamless integration with frontends or other services.
-
+* **🚀 Simple RESTful API:** Built with Flask, it exposes a clean and straightforward `/generate_roadmap` endpoint, making it incredibly easy to integrate with any frontend application or service.
 ---
 
 ## ⚙️ Installation
