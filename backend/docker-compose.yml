@@ -1,0 +1,24 @@
+services:
+  # 1. Your Python Flask Application
+  webapp:
+    build: .  # Build the image from the Dockerfile in this directory
+    container_name: flask_webapp
+    ports:
+      - "5000:5000" # Map your computer's port 5000 to the container's port 5000
+    env_file:
+      - .env      # This securely passes your .env variables (like OPENROUTER_API_KEY)
+    volumes:
+      - .:/app    # This mounts your local code into the container for live updates
+
+  # 2. The Prometheus Monitoring Service
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090" # Access Prometheus UI at http://localhost:9090
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml # Mount the config file
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    depends_on:
+      - webapp # Tell Prometheus to wait for the webapp to be ready

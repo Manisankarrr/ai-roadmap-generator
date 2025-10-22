@@ -5,3 +5,4 @@ Flask-CORS
 google-generativeai
 chromadb
 openai
+prometheus-flask-exporter

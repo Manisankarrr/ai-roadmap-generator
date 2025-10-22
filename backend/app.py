@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from dotenv import load_dotenv
 from openai import OpenAI
+from prometheus_flask_exporter import PrometheusMetrics  # <-- 1. ADDED IMPORT
 
 from modules.github_analyzer import analyze_github_profile
 from modules.knowledge_base import setup_knowledge_base, get_market_context
@@ -11,9 +12,9 @@ from modules.knowledge_base import setup_knowledge_base, get_market_context
 load_dotenv()
 app = Flask(__name__)
 CORS(app)
+metrics = PrometheusMetrics(app)  # <-- 2. INITIALIZED METRICS
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-
 
 if not OPENROUTER_API_KEY:
     print("Error: OPENROUTER_API_KEY not found in .env file.")
@@ -27,6 +28,7 @@ client = OpenAI(
 # --- SETUP KNOWLEDGE BASE ON STARTUP ---
 with app.app_context():
     setup_knowledge_base()
+
 
 def generate_openrouter_completion(prompt):
     completion = client.chat.completions.create(
@@ -50,7 +52,7 @@ def generate_roadmap_endpoint():
 
     github_url = data['github_url']
     career_goal = data['career_goal']
-    preferred_stack = data.get('preferred_stack', '') 
+    preferred_stack = data.get('preferred_stack', '')
 
     try:
         # --- RAG PIPELINE ---
@@ -130,7 +132,13 @@ def generate_roadmap_endpoint():
         print(f"An error occurred: {e}")
         return jsonify({'error': str(e)}), 500
 
+# --- METRICS & HEALTHCHECK ---
+
+@app.route('/health')  # <-- 4. ADDED HEALTH ENDPOINT
+def health():
+    return "OK", 200
+
 # --- RUN THE APP ---
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
-    app.run(debug=True, host="0.0.0.0", port=port)
+    app.run(debug=True, host="0.0.0.0", port=port, use_reloader=False)
