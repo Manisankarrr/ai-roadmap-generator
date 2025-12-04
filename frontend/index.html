@@ -4,29 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Project Roadmap Generator</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="36x36" href="icons/android-icon-36x36.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="icons/android-icon-48x48.png">
-    <link rel="icon" type="image/png" sizes="72x72" href="icons/android-icon-72x72.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="icons/android-icon-96x96.png">
-    <link rel="icon" type="image/png" sizes="144x144" href="icons/android-icon-144x144.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
-    <meta name="msapplication-TileColor" content="#0f2027">
-    <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#0f2027">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -37,13 +14,8 @@
         .result-heading { font-size: 1.25rem; font-weight: 700; color: #1f2937; margin-top: 1.5rem; margin-bottom: 0.75rem; }
         .result-list { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
         .result-list li { margin-bottom: 0.5rem; line-height: 1.6; }
-        .action-icon {
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .action-icon:hover {
-            transform: scale(1.1);
-        }
+        .action-icon { cursor: pointer; transition: all 0.2s ease; }
+        .action-icon:hover { transform: scale(1.1); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -77,8 +49,7 @@
             <div id="results-container" class="mt-12 hidden">
                 <div id="loading-spinner" class="text-center p-8">
                      <svg aria-hidden="true" class="inline w-10 h-10 text-gray-200 animate-spin fill-indigo-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5424 39.6781 93.9676 39.0409Z" fill="currentFill"/></svg>
-                    <p class="mt-4 text-gray-600 font-semibold">Analyzing your profile and generating a custom roadmap...</p>
-                    <p class="text-sm text-gray-500">This may take up to 30 seconds.</p>
+                     <p class="mt-4 text-gray-600 font-semibold">Connecting to AI Mentor...</p>
                 </div>
                 <div id="error-message" class="p-6 bg-red-50 border border-red-300 text-red-800 rounded-lg hidden">
                     <div class="flex items-center"><i class="fa-solid fa-circle-exclamation mr-3 text-lg"></i><p class="font-semibold"></p></div>
@@ -100,40 +71,52 @@
     <div id="success-popup" class="fixed bottom-5 right-5 bg-gray-800 text-white py-3 px-5 rounded-lg shadow-xl transition-opacity duration-300 opacity-0 pointer-events-none">
         <i class="fa-solid fa-check-circle mr-2 text-green-400"></i><span id="popup-message">Report downloaded successfully!</span>
     </div>
+
 <script type="module">
     import { Client } from "https://cdn.jsdelivr.net/npm/@gradio/client/dist/index.min.js";
 
-    // Helper function is unchanged
     function parseAndRenderResponse(text, container) {
         container.innerHTML = '';
         const lines = text.split('\n');
         let currentList = null;
+        let hasContent = false;
+
         lines.forEach(line => {
             line = line.trim();
             if (!line) return;
-            if (line.startsWith('Title:')) {
+
+            if (line.toLowerCase().startsWith('title:') || line.startsWith('# ')) {
                 const h1 = document.createElement('h1');
                 h1.className = 'result-title';
-                h1.textContent = line.replace('Title:', '').trim();
+                h1.textContent = line.replace(/^(Title:|# )/i, '').trim();
                 container.appendChild(h1);
                 currentList = null;
-            } else if (line.endsWith(':')) {
+                hasContent = true;
+            } else if (line.endsWith(':') || line.startsWith('## ')) {
                 const h2 = document.createElement('h2');
                 h2.className = 'result-heading';
-                h2.textContent = line;
+                h2.textContent = line.replace('## ', '').trim();
                 container.appendChild(h2);
                 currentList = document.createElement('ul');
                 currentList.className = 'result-list';
                 container.appendChild(currentList);
-            } else if (line.startsWith('-') && currentList) {
+                hasContent = true;
+            } else if ((line.startsWith('-') || line.startsWith('•') || line.startsWith('*')) && currentList) {
                 const li = document.createElement('li');
-                li.textContent = line.substring(1).trim();
+                li.textContent = line.replace(/^[-•*]\s*/, '').trim();
                 currentList.appendChild(li);
+                hasContent = true;
             }
         });
+
+        if (!hasContent) {
+            const pre = document.createElement('div');
+            pre.className = 'whitespace-pre-wrap text-gray-700 leading-relaxed';
+            pre.textContent = text;
+            container.appendChild(pre);
+        }
     }
 
-    // Added helper function to show popup notifications
     function showPopup(message) {
         const popup = document.getElementById('success-popup');
         const popupMessage = document.getElementById('popup-message');
@@ -146,9 +129,7 @@
 
     document.getElementById('roadmap-form').addEventListener('submit', async function(event) {
         event.preventDefault();
-        const githubUrl = document.getElementById('github-url').value;
-        const careerGoal = document.getElementById('career-goal').value;
-        const preferredStack = document.getElementById('preferred-stack').value;
+        
         const generateButton = document.getElementById('generate-button');
         const resultsContainer = document.getElementById('results-container');
         const roadmapOutput = document.getElementById('roadmap-output');
@@ -156,100 +137,69 @@
         const errorTextElement = errorMessageContainer.querySelector('p');
         const loadingSpinner = document.getElementById('loading-spinner');
         const actionIcons = document.getElementById('action-icons');
+        const githubUrl = document.getElementById('github-url').value;
+        const careerGoal = document.getElementById('career-goal').value;
+        const preferredStack = document.getElementById('preferred-stack').value;
+
         resultsContainer.classList.remove('hidden');
         loadingSpinner.classList.remove('hidden');
         errorMessageContainer.classList.add('hidden');
         roadmapOutput.classList.add('hidden');
         actionIcons.classList.add('hidden');
         generateButton.disabled = true;
+
         try {
-            // Connect to your Hugging Face Space (replace with your Space name if needed)
-            const client = await Client.connect("Manisankarrr/AIRoadMapGenerator");
-            const result = await client.predict("/generate_roadmap", {
-                github_url: githubUrl,
-                career_goal: careerGoal,
-                preferred_stack: preferredStack
-            });
-            // result.data[0] contains the output string
-            parseAndRenderResponse(result.data[0], roadmapOutput);
+            console.log("Connecting to local Gradio server...");
+            
+            // --- CONNECT TO LOCAL HOST 7860 ---
+            // This URL must match the "Running on local URL" in your Python terminal
+            const client = await Client.connect("http://localhost:7860/");
+            
+            const result = await client.predict("/generate_roadmap", [ 
+                githubUrl, 
+                careerGoal, 
+                preferredStack 
+            ]);
+
+            const responseText = result.data[0];
+            parseAndRenderResponse(responseText, roadmapOutput);
+            
+            loadingSpinner.classList.add('hidden');
             roadmapOutput.classList.remove('hidden');
             actionIcons.classList.remove('hidden');
+
         } catch (error) {
+            console.error("Error:", error);
+            loadingSpinner.classList.add('hidden');
             if (errorTextElement) {
-                errorTextElement.textContent = `Error: ${error.message}`;
+                errorTextElement.textContent = `Error: ${error.message}. Is app.py running on port 7860?`;
             }
             errorMessageContainer.classList.remove('hidden');
         } finally {
-            loadingSpinner.classList.add('hidden');
             generateButton.disabled = false;
         }
     });
 
-    // Added copy to clipboard functionality
-    document.getElementById('copy-button').addEventListener('click', function() {
-        const outputContainer = document.getElementById('roadmap-output');
-        const textContent = outputContainer.innerText;
-        
-        navigator.clipboard.writeText(textContent).then(() => {
-            showPopup('Copied to clipboard!');
-        }).catch(err => {
-            console.error('Failed to copy:', err);
-            showPopup('Failed to copy to clipboard');
+    const copyBtn = document.getElementById('copy-button');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const outputContainer = document.getElementById('roadmap-output');
+            navigator.clipboard.writeText(outputContainer.innerText).then(() => showPopup('Copied to clipboard!'));
         });
-    });
+    }
 
-    // --- PDF GENERATION LOGIC ---
-    document.getElementById('download-button').addEventListener('click', function() {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
-
-        const outputContainer = document.getElementById('roadmap-output');
-        const titleElement = outputContainer.querySelector('.result-title');
-        const title = titleElement ? titleElement.textContent : "AI_Project_Roadmap";
-        
-        let yPosition = 20;
-        const leftMargin = 15;
-        const usableWidth = doc.internal.pageSize.getWidth() - (2 * leftMargin);
-
-        function checkPageBreak(heightNeeded) {
-            if (yPosition + heightNeeded > doc.internal.pageSize.getHeight() - 20) {
-                doc.addPage();
-                yPosition = 20;
-            }
-        }
-
-        for (const child of outputContainer.children) {
-            if (child.classList.contains('result-title')) {
-                doc.setFont('helvetica', 'bold');
-                doc.setFontSize(22);
-                const splitText = doc.splitTextToSize(child.textContent, usableWidth);
-                checkPageBreak(splitText.length * 10);
-                doc.text(splitText, leftMargin, yPosition);
-                yPosition += (splitText.length * 10) + 5;
-            } else if (child.classList.contains('result-heading')) {
-                checkPageBreak(12);
-                doc.setFont('helvetica', 'bold');
-                doc.setFontSize(16);
-                doc.text(child.textContent, leftMargin, yPosition);
-                yPosition += 10;
-            } else if (child.classList.contains('result-list')) {
-                doc.setFont('helvetica', 'normal');
-                doc.setFontSize(11);
-                for (const item of child.children) {
-                    const itemText = `• ${item.textContent}`;
-                    const splitText = doc.splitTextToSize(itemText, usableWidth);
-                    checkPageBreak(splitText.length * 6);
-                    doc.text(splitText, leftMargin + 5, yPosition);
-                    yPosition += splitText.length * 6;
-                }
-                yPosition += 5;
-            }
-        }
-        
-        doc.save(`${title.replace(/ /g, '_')}_Report.pdf`);
-
-        showPopup('Report downloaded successfully!');
-    });
+    const downloadBtn = document.getElementById('download-button');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const text = document.getElementById('roadmap-output').innerText;
+            const splitText = doc.splitTextToSize(text, 180);
+            doc.text(splitText, 10, 10);
+            doc.save("AI_Roadmap.pdf");
+            showPopup('Report downloaded successfully!');
+        });
+    }
 </script>
 </body>
 </html>

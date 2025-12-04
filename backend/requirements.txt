@@ -3,6 +3,7 @@ python-dotenv
 requests
 Flask-CORS
 google-generativeai
+gradio
 chromadb
 openai
 prometheus-flask-exporter
